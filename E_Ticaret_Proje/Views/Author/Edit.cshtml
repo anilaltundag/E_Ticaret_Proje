@@ -1,0 +1,68 @@
+﻿@model E_Ticaret_Proje.Entity.Author
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div class="container pb-5">
+    <div class="row pt-5">
+        <h2><i class="fa-solid fa-pen-to-square"></i> Yazar Güncelle</h2>
+    </div>
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 mb-3">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text"><i class="fa-solid fa-upload"></i></label>
+                        <input type="file" name="Image" value="@Model.Image" class="form-control" />
+                    </div>
+                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group mt-5">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.ActionLink("Yazar Listesine Geri Dön", "Index", null, new { @class = "btn btn-warning" })
+                    @*<input type="submit" value="Güncelle" class="btn btn-success" />*@
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa-solid fa-pen fa-bounce" style="padding-right:10px"></i> Güncelle
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

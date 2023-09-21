@@ -1,0 +1,11 @@
+﻿@using E_Ticaret_Proje.Models;
+@model IEnumerable<AuthorModel>
+@{
+    ViewBag.Title = "List";
+}
+<div class="container pb-5 pt-5">
+
+    @Html.Partial("_AuthorList", Model)
+
+</div>
+

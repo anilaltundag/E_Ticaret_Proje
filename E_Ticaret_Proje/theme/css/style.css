@@ -1,0 +1,60 @@
+.jumbotron{
+    background-image: url("../img/background-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 450px;
+}
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #484848;
+    line-height: 1.35em;
+    height: 34px;
+}
+
+.product-price {
+    color: #414141;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+#product-details h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 12px;
+    height: 40px;
+}
+
+#write-review {
+    margin-left: -50px;
+}
+
+#product-price {
+    font-size: 28px;
+    color: red;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+main > .container {
+    padding: 60px 15px 0;
+}
+  
+  .footer {
+    background-color: #343a40;
+  }
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  code {
+    font-size: 80%;
+  }

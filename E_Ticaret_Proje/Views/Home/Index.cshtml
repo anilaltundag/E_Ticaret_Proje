@@ -1,0 +1,16 @@
+﻿@using E_Ticaret_Proje.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="jumbotron">
+    <div class="container">
+    </div>
+</div>
+<div class="container pb-5">
+    <!-- _ProductList adında bir Partialview oluşturup burada onu çağırdık -->
+    @Html.Partial("_ProductList", Model)
+</div>
+

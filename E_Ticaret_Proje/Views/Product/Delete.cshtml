@@ -1,0 +1,36 @@
+﻿@model E_Ticaret_Proje.Entity.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container pb-5">
+    <div class="row pt-5">
+        <h2>Ürünü silmek istediğinize emin misiniz?</h2>
+    </div>
+    <hr />
+    <div>
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @Html.ActionLink("Ürün Listesine Geri Dön", "Index", null, new { @class = "btn btn-warning" })
+                <input type="submit" value="Sil" class="btn btn-danger" />
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿@using E_Ticaret_Proje.Models;
+@model IEnumerable<AuthorModel>
+
+<p>
+    @foreach (var yazar in Model)
+	{
+		@yazar.Description
+	}
+</p>

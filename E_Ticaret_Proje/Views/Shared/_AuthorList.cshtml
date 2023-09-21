@@ -1,0 +1,31 @@
+﻿@using E_Ticaret_Proje.Models;
+@model IEnumerable<AuthorModel>
+
+<div class="row">
+
+    @foreach (var yazar in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <a href="/Home/AuthorDetails/@yazar.Id">
+                <img class="card-img-top" src="~/theme/img/@yazar.Image" alt="@yazar.Name">
+                </a>
+                <div class="card-body pb-5">
+                    <h4 class="card-title">
+                        <a href="/Home/AuthorDetails/@yazar.Id"> @yazar.Name</a>
+                    </h4>
+                    <p class="card-text pt-2 description">
+                        @yazar.Description
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="/Home/AuthorDetails/@yazar.Id" class="btn btn-default btn-sm float-right">
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        Yazarı incele
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
